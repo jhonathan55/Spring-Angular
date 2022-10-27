@@ -1,0 +1,33 @@
+<div class="container">
+    <form class="row g-3 needs-validation form" novalidate [formGroup]="form" (ngSubmit)="onSaveMovimiento()">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Tipo</label>
+            <input type="email" class="form-control" placeholder="ingreso" formControlName="tipo" [class]="isValidField('tipo')">
+            <div class="invalid-feedback">
+                <span *ngIf="form.get('tipo')?.errors">
+                    Tipo required
+                </span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" formControlName="cantidad" [class]="isValidField('cantidad')">
+            <div class="invalid-feedback">
+                <span *ngIf="form.get('tipo')?.errors">
+                    cantidad required
+                </span>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Saldo</label>
+            <input type="number" class="form-control" id="exampleInputPassword1" formControlName="saldo" [class]="isValidField('saldo')">
+            <div class="invalid-feedback">
+                <span *ngIf="form.get('tipo')?.errors">
+                    Saldo required
+                </span>
+            </div>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
